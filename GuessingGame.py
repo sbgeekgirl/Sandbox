@@ -4,12 +4,13 @@ x = random.randint(1, 101)
 print(f'The number is {x}')
 guess_string = input('Guess a number between 1 - 100: ')
 guess = int(guess_string)
+guess_distance = abs(x - guess)
 
 if guess < 1 or guess > 100:
     print('OUT OF BOUNDS!')
 elif guess == x:
     print('You guessed correctly! It only took you one try!')
-elif (x - 11) > guess < (x + 11):
+elif guess_distance <= 10:
     print('WARM')
 else:
     print('COLD')
@@ -30,9 +31,4 @@ while x != guess:
         print('WARMER')
     else:
         print('COLDER')
-    
-
-
-
-
 
